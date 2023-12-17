@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        div {
+            max-width: 500px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form method="POST" action="/form">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" value="" required>
+
+            <label for="address">Address</label>
+            <input id="address" name="address" type="text" value="" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" value="" required>
+
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" value="" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="interests">Interests</label>
+            <input id="interests" name="interests" type="text" value="" placeholder="Separate interests with commas">
+
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+
+            <!-- New Fields -->
+            <label for="age">Age</label>
+            <input id="age" name="age" type="number" value="" required>
+
+            <label for="hobbies">Hobbies</label>
+            <input id="hobbies" name="hobbies" type="text" value="" placeholder="List your hobbies">
+
+            <label for="feedback">Feedback</label>
+            <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
